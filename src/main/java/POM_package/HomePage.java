@@ -1,30 +1,28 @@
 package POM_package;
 
+import java.time.Duration;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+
 
 
 
 public class HomePage 
 {
+	
+	
 	static WebDriver driver;
 	
-	@FindBy (xpath="//input[@id='email']")
-	private WebElement userName;
-	
-	@FindBy (xpath="//input[@id='pass']")
-	private WebElement passWord;
-	
-	@FindBy (xpath="//button[text()='Log In']")
-	private WebElement loginbutton;
-	
-	@FindBy (xpath="//a[@id='u_0_0_JX']")
+		
+	@FindBy (xpath="//a[text()='Create New Account']")
 	private WebElement createNewAccount;
 	
-	@FindBy (xpath="//input[@id='u_1c_b_+x']")
+	@FindBy (xpath="//input[@name='firstname']")
 	private WebElement firstname;
 	
 	@FindBy (xpath="//input[@id='u_1c_d_c/']")
@@ -58,28 +56,7 @@ public class HomePage
 	
 	
 	
-	public void senduserName() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		driver.manage().window().maximize();
-		Thread.sleep(2000);
-		userName.sendKeys("Akshay Badhe");
-	}
 	
-	public void sendpassWord() throws InterruptedException
-	{
-		Thread.sleep(2000);
-		passWord.sendKeys("akshay@123");
-	}
-	
-	public void sendloginbutton() throws InterruptedException
-	{	
-		Thread.sleep(2000);
-//		loginbutton.click();
-//		Thread.sleep(2000);
-//		driver.navigate().back();
-//		Thread.sleep(2000);
-	}
 	
 	
 	
@@ -91,7 +68,7 @@ public class HomePage
 		createNewAccount.click();
 	}
 	
-	public void sendKeysfirstname()
+	public void sendKeysfirstname() 
 	{
 		firstname.sendKeys("Akshay");
 	}
